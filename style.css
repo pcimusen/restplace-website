@@ -503,7 +503,7 @@ body {
 }
 
 .product-visual {
-    min-height: 480px;
+    aspect-ratio: 1 / 1;
     position: relative;
     overflow: hidden;
 }
@@ -993,7 +993,7 @@ body {
     }
 
     .product-visual {
-        min-height: 320px;
+        aspect-ratio: 1 / 1;
     }
 
     .product-info {
@@ -1115,7 +1115,7 @@ body {
 
 @media (max-width: 480px) {
 
-    .product-visual { min-height: 260px; }
+    .product-visual { aspect-ratio: 1 / 1; }
     .product-info { padding: 32px 24px; }
 
     .contact-line-card,
