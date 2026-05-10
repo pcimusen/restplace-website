@@ -503,60 +503,19 @@ body {
 }
 
 .product-visual {
-    background: linear-gradient(145deg, #1e3320 0%, #2d5232 35%, #4a7e4f 65%, #6ba870 100%);
     min-height: 480px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: relative;
     overflow: hidden;
 }
 
-.product-visual::before {
-    content: '';
+.product-img {
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 30% 30%, rgba(255,255,255,.08) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(0,0,0,.3) 0%, transparent 60%);
-}
-
-.product-visual::after {
-    content: 'SESAME SOY PROTEIN';
-    position: absolute;
-    bottom: 28px;
-    right: 28px;
-    font-family: var(--ff-en);
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: .25em;
-    color: rgba(255,255,255,.3);
-}
-
-.product-visual-inner {
-    position: relative;
-    z-index: 1;
-    text-align: center;
-    padding: 40px;
-}
-
-.product-visual-name {
-    font-family: var(--ff-ja);
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--clr-white);
-    line-height: 1.5;
-    letter-spacing: .05em;
-    margin-bottom: 12px;
-}
-
-.product-visual-sub {
-    font-family: var(--ff-en);
-    font-size: 11px;
-    font-weight: 400;
-    letter-spacing: .3em;
-    color: rgba(255,255,255,.5);
-    line-height: 2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
 }
 
 .product-info {
