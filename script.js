@@ -5,7 +5,17 @@ const heroVideo = document.querySelector('.hero-bg video');
 const heroLogo  = document.querySelector('.hero-logo');
 if (heroVideo && heroLogo) {
     heroVideo.addEventListener('playing', () => {
-        setTimeout(() => heroLogo.classList.add('fade-out'), 3930);
+        setTimeout(() => {
+            heroLogo.style.animation = 'none';
+            heroLogo.style.opacity = '1';
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    heroLogo.style.transition = 'opacity .7s ease, filter .7s ease';
+                    heroLogo.style.opacity = '0';
+                    heroLogo.style.filter = 'blur(8px)';
+                });
+            });
+        }, 3800);
     }, { once: true });
 }
 
