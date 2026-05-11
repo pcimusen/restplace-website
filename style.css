@@ -210,14 +210,9 @@ body {
     position: absolute;
     inset: 0;
     z-index: 1;
-    background: linear-gradient(
-        to right,
-        transparent 0%,
-        transparent 40%,
-        rgba(255, 255, 255, 0.70) 54%,
-        rgba(255, 255, 255, 0.90) 66%,
-        rgba(255, 255, 255, 0.96) 100%
-    );
+    background:
+        linear-gradient(to right, rgba(0,0,0,0.32) 0%, transparent 38%),
+        linear-gradient(to right, transparent 0%, transparent 40%, rgba(255,255,255,0.70) 54%, rgba(255,255,255,0.90) 66%, rgba(255,255,255,0.96) 100%);
 }
 
 .hero-inner {
@@ -307,8 +302,14 @@ body {
     width: auto;
     align-self: center;
     opacity: 0;
-    animation: catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards;
-    animation-delay: calc(7 * 120ms + 600ms + 200ms);
+    animation:
+        catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards calc(7 * 120ms + 600ms + 200ms),
+        heroLogoFadeOut .7s ease forwards 3.93s;
+}
+
+@keyframes heroLogoFadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
 }
 
 .hero-catchphrase {
