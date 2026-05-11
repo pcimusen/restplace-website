@@ -197,11 +197,12 @@ body {
     z-index: 0;
 }
 
-.hero-bg img {
+.hero-bg img,
+.hero-bg video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: left center;
+    object-position: center center;
 }
 
 /* 右半分に白いグラデーションを重ねてテキストを読みやすくする */
