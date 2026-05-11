@@ -1,5 +1,14 @@
 /* RESTPLACE — Main Script */
 
+// Hero logo fade-out: 3.93s after video starts playing
+const heroVideo = document.querySelector('.hero-bg video');
+const heroLogo  = document.querySelector('.hero-logo');
+if (heroVideo && heroLogo) {
+    heroVideo.addEventListener('playing', () => {
+        setTimeout(() => heroLogo.classList.add('fade-out'), 3930);
+    }, { once: true });
+}
+
 // ---- Navigation ----
 const header = document.getElementById('header');
 const navToggle = document.getElementById('navToggle');

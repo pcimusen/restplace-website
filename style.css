@@ -302,14 +302,12 @@ body {
     width: auto;
     align-self: center;
     opacity: 0;
-    animation:
-        catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards calc(7 * 120ms + 600ms + 200ms),
-        heroLogoFadeOut .7s ease forwards 3.93s;
+    animation: catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards calc(7 * 120ms + 600ms + 200ms);
+    transition: opacity .7s ease;
 }
 
-@keyframes heroLogoFadeOut {
-    from { opacity: 1; }
-    to   { opacity: 0; }
+.hero-logo.fade-out {
+    opacity: 0;
 }
 
 .hero-catchphrase {
