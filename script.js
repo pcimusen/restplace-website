@@ -1,38 +1,5 @@
 /* RESTPLACE — Main Script */
 
-// Hero video: alternate herovideo.mp4 → herovideo2.mp4 → herovideo.mp4 → ...
-const heroVideo  = document.querySelector('.hero-bg video');
-const heroSource = heroVideo ? heroVideo.querySelector('source') : null;
-const heroLogo   = document.querySelector('.hero-logo');
-const heroVideos = ['herovideo.mp4', 'herovideo2.mp4', 'herovideo3.mp4'];
-let heroVideoIndex = 0;
-
-if (heroVideo && heroSource) {
-    heroVideo.addEventListener('ended', () => {
-        heroVideoIndex = (heroVideoIndex + 1) % heroVideos.length;
-        heroSource.src = heroVideos[heroVideoIndex];
-        heroVideo.load();
-        heroVideo.play();
-    });
-}
-
-// Hero logo fade-out: 3.8s after video starts playing (first play only)
-if (heroVideo && heroLogo) {
-    heroVideo.addEventListener('playing', () => {
-        setTimeout(() => {
-            heroLogo.style.animation = 'none';
-            heroLogo.style.opacity = '1';
-            requestAnimationFrame(() => {
-                requestAnimationFrame(() => {
-                    heroLogo.style.transition = 'opacity .7s ease, filter .7s ease';
-                    heroLogo.style.opacity = '0';
-                    heroLogo.style.filter = 'blur(8px)';
-                });
-            });
-        }, 3800);
-    }, { once: true });
-}
-
 // ---- Navigation ----
 const header = document.getElementById('header');
 const navToggle = document.getElementById('navToggle');
