@@ -88,7 +88,7 @@ body {
 .header {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 1002;
+    z-index: 1000;
     transition: background var(--trans), box-shadow var(--trans);
 }
 
@@ -1063,7 +1063,13 @@ body {
         padding: 14px 0 !important;
     }
 
-    .nav-toggle { display: flex; }
+    .nav-toggle {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        right: var(--container-px);
+        z-index: 1002;
+    }
     .nav-logo-tagline { display: inline; }
 
     .footer-top {
