@@ -304,6 +304,49 @@ body {
 }
 
 /* キャッチコピー + ロゴ */
+.hero-catchphrase-wrap {
+    position: absolute;
+    left: var(--container-px);
+    top: 38%;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    pointer-events: none;
+}
+
+.hero-logo {
+    height: clamp(140px, 16vw, 240px);
+    width: auto;
+    align-self: center;
+    opacity: 0;
+    animation: catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards calc(7 * 120ms + 600ms + 200ms);
+    transition: opacity .7s ease;
+}
+
+.hero-catchphrase {
+    font-family: 'Noto Serif JP', '游明朝', YuMincho, 'HiraMinProN-W3', serif;
+    font-size: clamp(26px, 3.6vw, 52px);
+    font-weight: 400;
+    color: #64564A;
+    letter-spacing: .2em;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.hero-catchphrase span {
+    display: inline-block;
+    opacity: 0;
+    animation: catchphraseIn .65s cubic-bezier(.25, .46, .45, .94) forwards;
+    animation-delay: calc(var(--i) * 120ms + 600ms);
+}
+
+@keyframes catchphraseIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
 
 .hero-scroll-indicator {
     position: absolute;
@@ -1084,6 +1127,7 @@ body {
     }
 
     .hero-scroll-indicator { display: none; }
+    .hero-catchphrase-wrap { display: none; }
 }
 
 @media (max-width: 480px) {
