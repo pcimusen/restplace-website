@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>送信完了 | RESTPLACE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thanks-section {
+            min-height: 100svh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 24px;
+        }
+        .thanks-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 24px;
+        }
+        .thanks-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--clr-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thanks-icon svg {
+            width: 28px;
+            height: 28px;
+            stroke: #fff;
+        }
+        .thanks-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(22px, 4vw, 32px);
+            font-weight: 400;
+            color: var(--clr-dark);
+            letter-spacing: .06em;
+        }
+        .thanks-text {
+            font-size: 15px;
+            line-height: 2;
+            color: var(--clr-text-mid);
+        }
+        .thanks-redirect {
+            font-size: 13px;
+            color: var(--clr-text-mid);
+            opacity: .7;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header scrolled" id="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">
+                    <img src="logo-character.png" alt="RESTPLACE" class="nav-logo-img">
+                    <span class="nav-logo-tagline">あなたと未来へ</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="thanks-section">
+        <div class="thanks-inner">
+            <div class="thanks-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                </svg>
+            </div>
+            <h1 class="thanks-title">お問い合わせありがとうございます</h1>
+            <p class="thanks-text">
+                内容を確認のうえ、担当よりご返信させていただきます。<br>
+                今しばらくお待ちください。
+            </p>
+            <p class="thanks-redirect">2秒後にトップページへ戻ります</p>
+        </div>
+    </section>
+
+    <script>
+        setTimeout(() => {
+            window.location.href = 'https://pcimusen.github.io/restplace-website/';
+        }, 2000);
+    </script>
+</body>
+</html>
