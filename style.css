@@ -30,9 +30,10 @@
     --clr-bg-alt:      #F5F3F0;
     --clr-text:        #1A1A1A;
     --clr-text-mid:    #555555;
-    --clr-text-muted:  #999999;
+    --clr-text-muted:  #6E6E6E;
     --clr-text-light:  #F0EDE8;
     --clr-accent:      #5B7F5E;
+    --clr-accent-text: #537056;   /* 小さな文字用: 白・#F5F3F0 の両方で AA を満たす濃さ */
     --clr-accent-lt:   #EBF2EC;
     --clr-line:        #00B900;
     --clr-amazon:      #FF9900;
@@ -97,6 +98,22 @@ body {
     backdrop-filter: blur(12px);
     box-shadow: 0 1px 0 var(--clr-border);
 }
+
+/* ヒーロー画像は明暗差が大きく、細いロゴとナビが沈むため薄いスクリムを敷く */
+.header::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 -28px 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(to bottom,
+        rgba(255,255,255,.88) 0%,
+        rgba(255,255,255,.55) 55%,
+        rgba(255,255,255,0) 100%);
+    transition: opacity var(--trans);
+}
+
+.header.scrolled::before { opacity: 0; }
 
 .nav { padding: 0 var(--container-px) 0 6px; }
 .nav-container {
@@ -256,7 +273,7 @@ body {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .3em;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     text-transform: uppercase;
     margin-bottom: 20px;
 }
@@ -364,7 +381,7 @@ body {
     font-size: 10px;
     font-weight: 500;
     letter-spacing: .25em;
-    color: rgba(0, 0, 0, .28);
+    color: rgba(0, 0, 0, .54);
     writing-mode: vertical-rl;
 }
 
@@ -402,12 +419,12 @@ body {
     font-size: 12px;
     font-weight: 400;
     letter-spacing: .1em;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     text-transform: none;
     margin-bottom: 10px;
 }
 
-.section-label--light { color: rgba(91,127,94,.85); }
+.section-label--light { color: #6E9070; }
 
 .section-title {
     font-family: var(--ff-en);
@@ -455,7 +472,7 @@ body {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .25em;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     text-transform: uppercase;
     margin-bottom: 32px;
 }
@@ -480,7 +497,7 @@ body {
     font-family: var(--ff-en);
     font-size: 12px;
     font-weight: 600;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     letter-spacing: .1em;
     min-width: 28px;
     margin-top: 2px;
@@ -537,7 +554,7 @@ body {
     font-size: 11px;
     font-weight: 600;
     letter-spacing: .3em;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     text-transform: uppercase;
     margin-bottom: 12px;
 }
@@ -684,9 +701,9 @@ body {
     transition: color var(--trans);
 }
 
-.faq-q:hover { color: var(--clr-accent); }
+.faq-q:hover { color: var(--clr-accent-text); }
 
-.faq-q[aria-expanded="true"] { color: var(--clr-accent); }
+.faq-q[aria-expanded="true"] { color: var(--clr-accent-text); }
 
 .faq-icon {
     flex-shrink: 0;
@@ -809,7 +826,7 @@ body {
 }
 
 .form-input::placeholder,
-.form-textarea::placeholder { color: #C0BBB5; }
+.form-textarea::placeholder { color: #797672; }
 
 .form-input:focus,
 .form-textarea:focus {
@@ -1182,7 +1199,7 @@ body {
     align-items: center;
     gap: 8px;
     font-size: 13px;
-    color: var(--clr-accent);
+    color: var(--clr-accent-text);
     margin-bottom: 48px;
     transition: gap var(--trans);
 }
